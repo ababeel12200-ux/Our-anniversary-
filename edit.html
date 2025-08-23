@@ -1,53 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="video.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edits Video</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff8f0;
-      color: #333;
-      padding: 20px;
-    }
-    button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    #videoContainer {
-      margin-top: 20px;
-    }
-    video {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-top: 10px;
-    }
-  </style>
+  <title>Her Edits</title>
+  <link rel="stylesheet" href="video.css">
 </head>
 <body>
 
-  <button id="editsBtn">Edits</button>
+  <h2>Her Edits</h2>
 
-  <div id="videoContainer"></div>
+  <!-- First video -->
+  <video controls>
+    <source src="myvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-  <script>
-    const videoContainer = document.getElementById('videoContainer');
+  <!-- Second video -->
+  <video controls>
+    <source src="myvideo2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    document.getElementById('editsBtn').addEventListener('click', () => {
-      videoContainer.innerHTML = `
-        <video controls>
-          <source src="myvideo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      `;
-    });
-  </script>
+  <!-- Third video -->
+  <video controls>
+    <source src="myvideo3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Back button -->
+  <br>
+  <button onclick="location.href='index.html'">Back</button>
 
 </body>
 </html>
-
