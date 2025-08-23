@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edits Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+      padding: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #videoContainer {
+      margin-top: 20px;
+    }
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="editsBtn">Edits</button>
+
+  <div id="videoContainer"></div>
+
+  <script>
+    const videoContainer = document.getElementById('videoContainer');
+
+    document.getElementById('editsBtn').addEventListener('click', () => {
+      videoContainer.innerHTML = `
+        <video controls>
+          <source src="your-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      `;
+    });
+  </script>
+
+</body>
+</html>
 
