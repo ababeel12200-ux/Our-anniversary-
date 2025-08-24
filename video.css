@@ -31,29 +31,31 @@ video {
 .button-container button:hover {
   background-color: #e63956;
   transform: scale(1.05);
-}
 .photos-container {
   width: 100%;
   overflow: hidden;
-  margin: 20px 0;
+  padding: 10px 0;
 }
 
 .photos-track {
   display: flex;
-  gap: 10px;
-  animation: scroll 20s linear infinite;
+  gap: 15px;
+  /* duplicate photos already in HTML for smooth loop */
+  animation: scroll-stickers 30s linear infinite;
 }
 
 .photos-track img {
-  width: 100px !important;   /* Sticker width */
-  height: 100px !important;  /* Sticker height */
+  width: 100px !important;    /* WhatsApp sticker size */
+  height: 100px !important;
   object-fit: cover !important;
   border-radius: 20px !important;
   flex-shrink: 0 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-
-@keyframes scroll {
+/* Smooth infinite scroll */
+@keyframes scroll-stickers {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-50%); } /* half width since we duplicated images */
 }
+  
