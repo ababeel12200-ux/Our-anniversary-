@@ -50,35 +50,20 @@ video {
   color: white;
   transition: 0.3s;
 }
-
-.button-container button:hover {
-  background-color: #ff5c7a;
-}
-  
-.photos-container {
-  width: 100%;
-  overflow: hidden;
-  padding: 10px 0;
-}
-
-.photos-track {
+#photosContainer {
   display: flex;
   gap: 10px;
-  animation: scroll-stickers 20s linear infinite;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
 }
 
-.photos-track img {
+#photosContainer img {
   width: 100px !important;      /* force sticker width */
   height: 100px !important;     /* force sticker height */
   object-fit: cover !important;
   border-radius: 20px !important;
   flex-shrink: 0 !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-
-/* simple auto-scroll */
-@keyframes scroll-stickers {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); } /* scroll left, then jump */
   }
   
