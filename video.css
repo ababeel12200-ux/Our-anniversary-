@@ -45,11 +45,13 @@ video {
 }
 
 .photos-track img {
-  width: 100px;   /* Sticker size */
-  height: 100px;
-  object-fit: cover;
-  border-radius: 20px;
+  width: 100px !important;   /* Sticker width */
+  height: 100px !important;  /* Sticker height */
+  object-fit: cover !important;
+  border-radius: 20px !important;
+  flex-shrink: 0 !important;
 }
+
 
 @keyframes scroll {
   0% { transform: translateX(0); }
