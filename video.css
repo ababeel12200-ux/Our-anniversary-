@@ -59,18 +59,14 @@ video {
 .slideshow-track {
   display: flex;
   gap: 10px;
-  animation: scroll 20s linear infinite;
 }
 
 .slideshow-track img {
-  width: 100px;          /* WhatsApp sticker size */
+  width: 100px;       /* WhatsApp sticker size */
   height: 100px;
   object-fit: cover;
   border-radius: 12px;
+  flex-shrink: 0;
 }
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* scroll half of track width */
-}
+  
 
