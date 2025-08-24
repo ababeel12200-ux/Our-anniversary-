@@ -153,3 +153,13 @@ window.addEventListener('load', () => {
       document.body.appendChild(heart);
     }
   </script>
+<script>
+window.addEventListener('load', () => {
+  const music = document.getElementById('bgMusic');
+  music.play().catch(() => {
+    console.log("Autoplay blocked, user interaction needed");
+  });
+});
+</script>
+</body>
+  
