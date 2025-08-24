@@ -50,20 +50,29 @@ video {
   color: white;
   transition: 0.3s;
 }
+/* Photo Slideshow */
 #photosContainer {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding: 10px 0;
-  scroll-behavior: smooth;
+  width: 100%;
+  overflow: hidden;
+  margin: 20px 0;
 }
+
+.photos-slide {
+  display: flex;
+  animation: scroll 25s linear infinite;
+}
+
 #photosContainer img {
-  max-width: 120px !important;
-  max-height: 120px !important;
   width: 120px !important;
   height: 120px !important;
   object-fit: cover !important;
-  border-radius: 15px !important;
-  display: inline-block !important;
+  border-radius: 15px;
+  margin-right: 10px;
+}
+
+/* Animation for horizontal auto-scroll */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
   
