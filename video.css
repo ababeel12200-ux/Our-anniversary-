@@ -50,23 +50,23 @@ video {
   color: white;
   transition: 0.3s;
 }
-.slideshow-container {
+.photo-slider {
   width: 100%;
   overflow: hidden;
   margin: 20px auto;
 }
 
-.slideshow-track {
+.photo-track {
   display: flex;
   gap: 10px;
 }
 
-.slideshow-track img {
-  width: 100px;       /* WhatsApp sticker size */
+.photo-track img {
+  width: 100px;          /* WhatsApp sticker size */
   height: 100px;
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
 }
-  
+
 
