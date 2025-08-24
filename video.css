@@ -50,27 +50,26 @@ video {
   color: white;
   transition: 0.3s;
 }
-.photo-slider {
+.slideshow {
   width: 100%;
   overflow: hidden;
   margin: 20px auto;
 }
 
-.photo-track {
+.slideshow-wrapper {
   display: flex;
-  animation: scrollPhotos 20s linear infinite;
+  animation: slide 21s linear infinite; /* 7 photos × 3s each */
 }
 
-.photo-track img {
-  width: 100px !important;   /* WhatsApp sticker size */
-  height: 100px !important;
-  margin: 0 10px;
-  border-radius: 15px;  /* makes them look like stickers */
+.slideshow img {
+  width: 120px !important;   /* Sticker width */
+  height: 120px !important;  /* Sticker height */
   object-fit: cover;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
-@keyframes scrollPhotos {
+@keyframes slide {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
-  
