@@ -152,6 +152,16 @@ window.addEventListener('load', () => {
       heart.innerHTML = '❤';
       document.body.appendChild(heart);
     }
+  <!-- Other content like photos, buttons, etc. -->
+
+  <!-- Paragraph where hearts will float -->
+  <p id="myParagraph">
+    Always yours ❤️
+  </p>
+
+  <!-- Rest of your content like buttons, slideshow, etc. -->
+</body>
+    
   </script>
 <script>
 window.addEventListener('load', () => {
@@ -161,5 +171,38 @@ window.addEventListener('load', () => {
   });
 });
 </script>
+  <script>
+const paragraph = document.getElementById('myParagraph');
+let heartCount = 0;
+const maxHearts = 50; // number of hearts on screen
+
+function createHeart() {
+  if (heartCount >= maxHearts) return;
+
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+
+  // Spawn hearts within paragraph width & height
+  const rect = paragraph.getBoundingClientRect();
+  const x = rect.left + Math.random() * rect.width;
+  const y = rect.top + Math.random() * rect.height;
+
+  heart.style.left = x + 'px';
+  heart.style.top = y + 'px';
+  heart.style.animationDuration = 2 + Math.random() * 2 + 's';
+
+  document.body.appendChild(heart);
+
+  heartCount++;
+  setTimeout(() => {
+    heart.remove();
+    heartCount--;
+  }, 6000); // heart disappears after 4 seconds
+}
+
+// Create hearts continuously
+setInterval(createHeart, 200); // every 0.2s
+  </script>
+  
 </body>
   
