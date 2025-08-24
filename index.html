@@ -128,6 +128,21 @@ Celebrating <strong>1.6 years</strong> with you fills me with gratitude, joy, an
     <img src="photo6.jpg" alt="Her Photo 6">
     <img src="photo7.jpg" alt="Her Photo 7">
   </div>
+    <script>
+  const container = document.querySelector('.photos-container');
+  let scrollAmount = 0;
+
+  function autoScroll() {
+    scrollAmount += 1; // speed of scroll (pixels)
+    if(scrollAmount >= container.scrollHeight - container.clientHeight){
+      scrollAmount = 0; // reset scroll to top
+    }
+    container.scrollTop = scrollAmount;
+  }
+
+  setInterval(autoScroll, 50); // adjust 50 for speed (lower = faster)
+    </script>
+    
     <!-- Buttons -->
     <div class="button-container">
   <button onclick="location.href='poem.html'">Poem For You</button>
