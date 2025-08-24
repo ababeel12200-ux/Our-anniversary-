@@ -50,25 +50,15 @@ video {
   color: white;
   transition: 0.3s;
 }
-/* Photo Slideshow */
-#photosContainer {
-  width: 100%;
-  overflow: hidden;
-  margin: 20px 0;
-}
-
-.photos-slide {
-  display: flex;
-  animation: scroll 25s linear infinite;
-}
-
 #photosContainer img {
-  width: 120px !important;
-  height: 120px !important;
+  width: 100px !important;
+  height: 100px !important;
   object-fit: cover !important;
-  border-radius: 15px;
-  margin-right: 10px;
+  border-radius: 15px !important;
+  margin-right: 10px !important;
+  flex-shrink: 0 !important;
 }
+  
 
 /* Animation for horizontal auto-scroll */
 @keyframes scroll {
