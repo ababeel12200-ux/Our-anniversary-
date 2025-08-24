@@ -5,3 +5,30 @@ video {
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
+/* your existing .video styles are here */
+
+/* buttons container */
+.button-container {
+  display: flex;
+  justify-content: center; /* keeps them centered */
+  gap: 20px; /* space between */
+  margin-top: 20px;
+}
+
+/* button style */
+.button-container button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ff4d6d; /* pinkish red */
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* hover effect */
+.button-container button:hover {
+  background-color: #e63956;
+  transform: scale(1.05);
+}
