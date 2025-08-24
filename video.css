@@ -52,17 +52,16 @@ video {
 }
 #photosContainer {
   display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 10px;
+  overflow-x: auto;   /* lets you swipe/scroll horizontally */
+  gap: 8px;
   padding: 10px;
 }
 
 #photosContainer img {
-  width: 100px !important;
-  height: 100px !important;
-  object-fit: cover !important;
-  border-radius: 15px !important;
-  flex-shrink: 0 !important;
+  width: 96px;        /* WhatsApp sticker size */
+  height: 96px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
 }
   
