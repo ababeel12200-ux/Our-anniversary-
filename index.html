@@ -153,5 +153,20 @@ Celebrating <strong>1.6 years</strong> with you fills me with gratitude, joy, an
       document.body.appendChild(heart);
     }
   </script>
+  <script>
+const track = document.getElementById('slideshowTrack');
+let scrollPos = 0;
+
+function scrollPhotos() {
+  scrollPos += 1; // speed in pixels
+  if (scrollPos > track.scrollWidth - track.parentElement.offsetWidth) {
+    scrollPos = 0; // reset to start
+  }
+  track.style.transform = `translateX(-${scrollPos}px)`;
+  requestAnimationFrame(scrollPhotos);
+}
+
+scrollPhotos();
+  </script>
 </body>
 </html>
