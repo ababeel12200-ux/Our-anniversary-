@@ -120,7 +120,19 @@ Shaima, our journey has been a beautiful blend of love, laughter, and even the l
 <p>
 Celebrating <strong>1.6 years</strong> with you fills me with gratitude, joy, and an unshakable certainty: no matter what life brings, I want to stay with you, face every challenge together, and love you more deeply every single day.
     </p> 
+<audio id="bgMusic" autoplay loop>
+  <source src="your-music.mp3" type="audio/mpeg">
+</audio>
 
+<script>
+window.addEventListener('load', () => {
+  const music = document.getElementById('bgMusic');
+  music.play().catch(() => {
+    console.log("Autoplay blocked, user interaction needed");
+  });
+});
+</script>
+    
     <!-- Buttons -->
     <div class="button-container">
   <button onclick="location.href='poem.html'">Poem For You</button>
