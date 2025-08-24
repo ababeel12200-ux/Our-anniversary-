@@ -50,19 +50,19 @@ video {
   color: white;
   transition: 0.3s;
 }
+#photosContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  padding: 10px;
+}
+
 #photosContainer img {
   width: 100px !important;
   height: 100px !important;
   object-fit: cover !important;
   border-radius: 15px !important;
-  margin-right: 10px !important;
   flex-shrink: 0 !important;
-}
-  
-
-/* Animation for horizontal auto-scroll */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
 }
   
