@@ -119,18 +119,7 @@ Today we celebrate <strong>1.6 magical years</strong> of choosing each other. If
 Shaima, our journey has been a beautiful blend of love, laughter, and even the little fights that somehow only brought us closer. Every disagreement has shown me that no argument can ever shake hearts that are truly meant for one another. Through every high and low, every mile apart, we’ve always found our way back to each other, proving that distance is powerless against love this strong.
 <p>
 Celebrating <strong>1.6 years</strong> with you fills me with gratitude, joy, and an unshakable certainty: no matter what life brings, I want to stay with you, face every challenge together, and love you more deeply every single day.
-    </p>
-    <div class="photo-slider">
-  <div class="photo-track" id="photoTrack">
-    <img src="photo1.jpg" alt="Photo 1">
-    <img src="photo2.jpg" alt="Photo 2">
-    <img src="photo3.jpg" alt="Photo 3">
-    <img src="photo4.jpeg" alt="Photo 4">
-    <img src="photo5.jpg" alt="Photo 5">
-    <img src="photo6.jpg" alt="Photo 6">
-    <img src="photo7.jpg" alt="Photo 7">
-  </div>
-</div>
+    </p> 
 
     <!-- Buttons -->
     <div class="button-container">
@@ -152,18 +141,3 @@ Celebrating <strong>1.6 years</strong> with you fills me with gratitude, joy, an
       document.body.appendChild(heart);
     }
   </script>
-  <script>
-const track = document.getElementById('photoTrack');
-let scrollPos = 0;
-
-function autoScroll() {
-  scrollPos += 1; // pixels per frame (adjust speed)
-  if (scrollPos > track.scrollWidth - track.parentElement.offsetWidth) {
-    scrollPos = 0; // reset to start
-  }
-  track.style.transform = `translateX(-${scrollPos}px)`;
-  requestAnimationFrame(autoScroll);
-}
-
-autoScroll();
-</script>
