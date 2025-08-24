@@ -50,18 +50,3 @@ video {
   color: white;
   transition: 0.3s;
 }
-#photosContainer {
-  display: flex;
-  overflow-x: auto;   /* lets you swipe/scroll horizontally */
-  gap: 8px;
-  padding: 10px;
-}
-
-#photosContainer img {
-  width: 96px;        /* WhatsApp sticker size */
-  height: 96px;
-  object-fit: cover;
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-  
