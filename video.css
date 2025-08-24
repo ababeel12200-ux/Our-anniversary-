@@ -39,23 +39,24 @@ video {
 
 .photos-track {
   display: flex;
-  gap: 15px;
-  /* duplicate photos already in HTML for smooth loop */
+  gap: 10px;
+  /* total width just enough for images */
+  width: max-content;  
   animation: scroll-stickers 30s linear infinite;
 }
 
 .photos-track img {
-  width: 100px !important;    /* WhatsApp sticker size */
-  height: 100px !important;
-  object-fit: cover !important;
-  border-radius: 20px !important;
-  flex-shrink: 0 !important;
+  width: 100px;           /* sticker width */
+  height: 100px;          /* sticker height */
+  object-fit: cover;
+  border-radius: 20px;
+  flex-shrink: 0;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-/* Smooth infinite scroll */
+/* smooth infinite horizontal scroll */
 @keyframes scroll-stickers {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* half width since we duplicated images */
+  100% { transform: translateX(-50%); }
 }
   
