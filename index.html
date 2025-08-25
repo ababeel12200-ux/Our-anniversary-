@@ -179,6 +179,15 @@ window.addEventListener('load', () => {
   });
 });
 </script>
+  <!-- Background music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="yourmusic.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Volume control script -->
+  <script>
+    document.getElementById("bg-music").volume = 0.2; // 20% volume
+  </script>
   <script>
 const paragraph = document.getElementById('myParagraph');
 let heartCount = 0;
