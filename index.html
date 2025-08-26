@@ -9,19 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
   /* Body & background */
-  body 
-    <!-- Popup -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <h2>Hey love! 💖</h2>
-    <p>Do you want to see something special?</p>
-    <div class="popup-buttons">
-      <button id="leftBtn">😏 Click yes</button>
-      <button id="rightBtn">Yesss ✅</button>
-    </div>
-  </div>
-</div>
-    {
+  body   {
     margin: 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #fff0f5, #ffe4f0, #fce7f3);
@@ -347,20 +335,5 @@ setInterval(createHeart, 200); // every 0.2s
     })();
   };
 </script>  
-  <script>
-  // Show popup on page load
-  window.onload = function() {
-    document.getElementById('popup').style.display = 'flex';
-  }
-
-  // Close popup on button click
-  document.getElementById('leftBtn').onclick = function() {
-    document.getElementById('popup').style.display = 'none';
-  }
-
-  document.getElementById('rightBtn').onclick = function() {
-    document.getElementById('popup').style.display = 'none';
-  }
-</script>
 </body>
 </html>
