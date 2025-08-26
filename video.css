@@ -86,20 +86,13 @@ video {
 .slideshow {
   width: 100%;
   overflow: hidden;
-  background: transparent;
-  margin: 20px auto;
-}
-
-.slideshow {
-  width: 100%;
-  overflow: hidden;
   margin: 20px auto;
 }
 
 .slide-track {
   display: flex;
-  width: max-content; /* expands for all 21 images */
-  animation: scroll 30s linear infinite;
+  width: max-content; /* track expands for all 40 images */
+  animation: scroll 50s linear infinite; /* slower because more images */
 }
 
 .slide-track img {
@@ -111,9 +104,8 @@ video {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Full -100% scroll for seamless infinite loop */
 @keyframes scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* only slide half the track */
 }
 
