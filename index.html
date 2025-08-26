@@ -133,7 +133,46 @@ window.addEventListener('load', () => {
   });
 });
 </script>
-    
+    <div class="slideshow">
+  <div class="slide-track">
+    <img src="photo1.jpg" alt="Sticker 1">
+    <img src="photo2.jpg" alt="Sticker 2">
+    <img src="photo3.jpg" alt="Sticker 3">
+    <img src="photo4.jpeg" alt="Sticker 4">
+    <img src="photo5.jpg" alt="Sticker 5">
+    <img src="photo6.jpg" alt="Sticker 6">
+    <img src="photo7.jpg" alt="Sticker 7">
+  </div>
+</div>
+
+<style>
+  .slideshow {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    margin: 20px auto;
+  }
+
+  .slide-track {
+    display: flex;
+    width: calc(70px * 14); /* 2x images for smooth loop */
+    animation: scroll 15s linear infinite;
+  }
+
+  .slide-track img {
+    width: 70px;
+    height: 70px;
+    margin: 0 10px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  @keyframes scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
     <!-- Buttons -->
     <div class="button-container">
   <button onclick="location.href='poem.html'">Poem For You</button>
