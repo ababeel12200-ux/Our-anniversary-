@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortune Cookie 🍪</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fff0f5, #ffe4f0, #fce7f3);
+  color: #9d174d;
+  text-align: center;
+  overflow-x: hidden;
+}
+h2 { color: #8B0000; }
+.cookie-container { position: relative; width: 200px; height: 120px; margin: 30px auto; cursor: pointer; }
+.cookie { width: 100%; height: 100%; position: absolute; top: 0; left: 0; transform-origin: center bottom; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: linear-gradient(145deg, #f4c27b 0%, #d18c4f 100%); box-shadow: inset -5px -5px 10px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.3); transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);}
+.cookie.left { transform-origin: right bottom; z-index:2; }
+.cookie.right { transform-origin: left bottom; z-index:1; }
+.cookie.open-left { transform: rotate(-45deg) translate(-35px,25px) scale(1.05); }
+.cookie.open-right { transform: rotate(45deg) translate(35px,25px) scale(1.05); }
+.fortune-paper { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -150%) scale(0); width: 180px; padding: 14px; background: #fff4dc; border-radius: 10px; text-align: center; font-weight: bold; color: #5a3e36; box-shadow: 0 5px 20px rgba(0,0,0,0.3); opacity: 0; z-index: 5; transition: transform 0.5s ease-out, opacity 0.5s ease-out; }
+.fortune-paper.show { transform: translate(-50%, -60%) scale(1); opacity: 1; }
+.heart-float { position: absolute; width: 20px; height: 20px; pointer-events: none; animation: floatUp 4s linear forwards; }
+@keyframes floatUp { 0% { transform: translate(0,0) rotate(0deg) scale(0); opacity: 1; } 25% { transform: translate(calc(var(--driftX)*25%), -25vh) rotate(45deg) scale(1); } 50% { transform: translate(calc(var(--driftX)*50%), -50vh) rotate(-30deg) scale(1.1); } 75% { transform: translate(calc(var(--driftX)*75%), -75vh) rotate(20deg) scale(1); } 100% { transform: translate(calc(var(--driftX)*100%), -100vh) rotate(0deg) scale(0); opacity: 0; } }
+</style>
+</head>
+<body>
+
+<h2>🍪 Click the cookie to see your love fortune! 🍀</h2>
+<div class="cookie-container" id="cookieContainer">
+  <div class="cookie left" id="cookieLeft"></div>
+  <div class="cookie right" id="cookieRight"></div>
+  <div class="fortune-paper" id="fortunePaper"></div>
+</div>
+<p style="margin-top: 15px; font-size: 1.1rem; color: #8B0000;">Remember, our love grows stronger every day ❤️</p>
+
+<script>
+const cookieContainer = document.getElementById("cookieContainer");
+const cookieLeft = document.getElementById("cookieLeft");
+const cookieRight = document.getElementById("cookieRight");
+const fortunePaper = document.getElementById("fortunePaper");
+
+const fortunes = [
+  "Love grows stronger when we believe in each other.",
+  "Faith in us will guide our hearts forever.",
+  "Loyalty and trust are the strongest bonds.",
+  "Together we can overcome anything with love.",
+  "Our love shines brighter when we stay true.",
+  "Believing in each other is the secret to happiness.",
+  "Trust, faith, and love — the pillars of our relationship.",
+  "Every day with you is a blessing.",
+  "Patience and understanding strengthen our bond.",
+  "Love is our guiding light in every moment.",
+  "We are stronger together than apart.",
+  "True love is built on trust and care.",
+  "Cherish the little moments, they are priceless.",
+  "Faith in our love makes the impossible possible.",
+  "Loyal hearts never lose their way.",
+  "We grow together with every challenge.",
+  "Love is a journey we travel hand in hand.",
+  "Our hearts beat as one in every situation.",
+  "Belief in each other brings endless joy.",
+  "Every moment together is a treasure.",
+  "Trust is the foundation of our relationship.",
+  "Our love story is written in the stars.",
+  "Patience and love conquer all obstacles.",
+  "Together we can face anything life throws at us.",
+  "Our bond is unbreakable and eternal.",
+  "Love is not just feelings, it's action and trust.",
+  "Our faith in each other strengthens daily.",
+  "Every smile we share brings us closer.",
+  "Loyalty is the heart of our love.",
+  "Love and trust grow stronger with time.",
+  "Together we make a perfect team."
+];
+
+let opened = false;
+function typeWriter(text, element, i=0){
+  if(i<text.length){
+    element.innerHTML += text.charAt(i);
+    setTimeout(()=>typeWriter(text, element, i+1),40);
+  }
+}
+
+function createFortuneHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart-float");
+  const size = 10 + Math.random()*20;
+  heart.style.width = size + "px";
+  heart.style.height = size + "px";
+  heart.style.left = Math.random()*window.innerWidth+"px";
+  heart.style.top = window.innerHeight+"px";
+  heart.style.setProperty('--driftX', (Math.random()-0.5)*2);
+  heart.innerHTML = `<svg viewBox="0 0 32 29.6" fill="hsl(${Math.random()*360}, 80%, 60%)" xmlns="http://www.w3.org/2000/svg"><path d="M23.6,0C20.9,0,18.5,1.4,16,3.9C13.5,1.4,11.1,0,8.4,0C3.8,0,0,3.8,0,8.4c0,4.7,4.2,8.8,10.5,14.1L16,29.6l5.5-7.1 C27.8,17.2,32,13.1,32,8.4C32,3.8,28.2,0,23.6,0z"/></svg>`;
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),4000);
+}
+
+cookieContainer.addEventListener("click", ()=>{
+  if(opened) return;
+  opened = true;
+  cookieLeft.classList.add("open-left");
+  cookieRight.classList.add("open-right");
+  setTimeout(()=>{
+    const randomIndex = Math.floor(Math.random()*fortunes.length);
+    fortunePaper.innerHTML="";
+    fortunePaper.classList.add("show");
+    typeWriter(fortunes[randomIndex], fortunePaper);
+    for(let i=0;i<40;i++){
+      setTimeout(createFortuneHeart,i*100);
+    }
+  },700);
+});
+</script>
+</body>
+</html>
