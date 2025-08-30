@@ -1,341 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Anniversary Meri Shaimuuuu ❤️</title>
-  <!-- Link your CSS files here -->
-  <link rel="stylesheet" href="video.css">
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <style>
-  /* Body & background */
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #fff0f5, #ffe4f0, #fce7f3);
-    color: #9d174d;
-    text-align: center;
-    overflow-x: hidden;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Anniversary Meri Shaimuuuu ❤️</title>
+  <link rel="stylesheet" href="video.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-  /* Header */
-  header {
-    padding: 20px;
-  }
+  <style>
+    /* Body & background */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe4f0, #fce7f3);
+      color: #9d174d;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-  h1 {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #8B0000;
-  }
+    /* Header */
+    header {
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #8B0000;
+    }
+    .banner {
+      display: inline-block;
+      background: rgba(255,255,255,0.7);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
 
-  .banner {
-    display: inline-block;
-    background: rgba(255,255,255,0.7);
-    padding: 8px 16px;
-    border-radius: 30px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
+    /* Cards */
+    .card {
+      max-width: 600px;
+      background: rgba(255,255,255,0.85);
+      margin: 15px auto;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .card h2, .card h3 {
+      color: #8B0000;
+      text-align: center;
+    }
+    .card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #9d174d;
+    }
 
-  /* Cards */
-  .card {
-    max-width: 600px;
-    background: rgba(255,255,255,0.85);
-    margin: 15px auto;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: left;
-  }
+    /* Buttons */
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .card button {
+      padding: 12px 25px;
+      background-color: #ff4d6d;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      margin: 5px;
+      transition: 0.3s;
+    }
+    .card button:hover {
+      background-color: #ff1e4d;
+    }
 
-  .card h2, .card h3 {
-    color: #8B0000;
-    text-align: center;
-  }
+    /* Hearts animation */
+    .heart {
+      position: absolute;
+      color: #e11d48;
+      font-size: 18px;
+      opacity: 0.3;
+      animation: float 10s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh); }
+      100% { transform: translateY(-10vh); }
+    }
 
-  .card p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #9d174d;
-  }
+    /* Footer */
+    footer {
+      margin: 25px 0;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
 
-  /* Buttons */
-  .button-container {
-    text-align: center;
-    margin-top: 20px;
-  }
+    /* Slideshow */
+    .slideshow {
+      width: 100%;
+      overflow: hidden;
+      background: transparent;
+      margin: 20px auto;
+    }
+    .slide-track {
+      display: flex;
+      width: calc(70px * 40);
+      animation: scroll 15s linear infinite;
+    }
+    .slide-track img {
+      width: 70px;
+      height: 70px;
+      margin: 0 10px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
-  .card button {
-    padding: 12px 25px;
-    background-color: #ff4d6d;
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
-    margin: 5px;
-    transition: 0.3s;
-  }
-
-  .card button:hover {
-    background-color: #ff1e4d;
-  }
-
-  /* Hearts animation */
-  .heart {
-    position: absolute;
-    color: #e11d48;
-    font-size: 18px;
-    opacity: 0.3;
-    animation: float 10s linear infinite;
-  }
-
-  @keyframes float {
-    0% { transform: translateY(100vh); }
-    100% { transform: translateY(-10vh); }
-  }
-
-  /* Footer */
-  footer {
-    margin: 25px 0;
-    font-size: 0.85rem;
-    opacity: 0.7;
-  }
-
-  /* Slideshow */
-  .slideshow {
-    width: 100%;
-    overflow: hidden;
-    background: transparent;
-    margin: 20px auto;
-  }
-
-  .slide-track {
-    display: flex;
-    width: calc(70px * 40); /* 2x images for smooth loop */
-    animation: scroll 15s linear infinite;
-  }
-
-  .slide-track img {
-    width: 70px;
-    height: 70px;
-    margin: 0 10px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-
-  @keyframes scroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* Popup CSS */
-  .popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    display: none; /* hidden initially */
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-
-  .popup-content {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 400px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  }
-
-  .popup-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-
-  .popup-buttons button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: transform 0.2s;
-  }
-
-  .popup-buttons button:hover {
-    transform: scale(1.1);
-  }
-
-  #leftBtn {
-    background: #ffcccb;
-  }
-
-  #rightBtn {
-    background: #90ee90;
-  }
-
-  </style>
+    /* Popup */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .popup-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .popup-buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+    .popup-buttons button:hover { transform: scale(1.1); }
+    #leftBtn { background: #ffcccb; }
+    #rightBtn { background: #90ee90; }
+  </style>
 </head>
+
 <body>
 
-  <!-- Popup HTML -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <h2>Hey Cutie 😍</h2>
-      <p>Do you want to see something special?</p>
-      <div class="popup-buttons">
-        <button id="leftBtn">Sighh 🤪</button>
-        <button id="rightBtn">Lovee❤️🎀</button>
-      </div>
-    </div>
-  </div>
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>Hey Cutie 😍</h2>
+      <p>Do you want to see something special?</p>
+      <div class="popup-buttons">
+        <button id="leftBtn">Sighh 🤪</button>
+        <button id="rightBtn">Lovee❤️🎀</button>
+      </div>
+    </div>
+  </div>
 
-  <header>
-    <div class="banner">Happy 1.6 Years Together — Since May ❤</div>
-    <h1>Happy Anniversary Meri Shaimuuuu</h1>
-    <p>A small space to cherish our love — every call, every laugh, every fleeting moment that turns into forever. ❤️</p>
-  </header>
+  <header>
+    <div class="banner">Happy 1.6 Years Together — Since May ❤</div>
+    <h1>Happy Anniversary Meri Shaimuuuu</h1>
+    <p>A small space to cherish our love — every call, every laugh, every fleeting moment that turns into forever. ❤️</p>
+  </header>
 
-  <section class="card">
-    <h2>For My Qalbi 💌</h2>
-    <p id="myParagraph">
-      From Mumbai to Hyderabad, our love has grown in both quiet whispers and loud laughter. Thank you, Shaima, for your endless kindness, your patience, and the way your smile feels like the safest home I could ever imagine. Every random call, every video chat, and every little moment we share turns into a memory I’ll treasure forever.
-      <br><br>
-      Today we celebrate <strong>1.6 magical years</strong> of choosing each other. If I could bottle time, I’d save the sound of your laugh, the warmth in your voice, and the way you say my name. Here’s to more sunsets watched together, more secret jokes shared, and more dreams we’ll turn into reality side by side.
-      <br><br>
-      Shaima, our journey has been a beautiful blend of love, laughter, and even the little fights that somehow only brought us closer. Every disagreement has shown me that no argument can ever shake hearts that are truly meant for one another. Through every high and low, every mile apart, we’ve always found our way back to each other, proving that distance is powerless against love this strong.
-      <br><br>
-      Celebrating <strong>1.6 years</strong> with you fills me with gratitude, joy, and an unshakable certainty: no matter what life brings, I want to stay with you, face every challenge together, and love you more deeply every single day.
-    </p>
+  <section class="card">
+    <h2>For My Qalbi 💌</h2>
+    <p id="myParagraph">
+      From Mumbai to Hyderabad, our love has grown in both quiet whispers and loud laughter. Thank you, Shaima, for your endless kindness, your patience, and the way your smile feels like the safest home I could ever imagine. Every random call, every video chat, and every little moment we share turns into a memory I’ll treasure forever.
+      <br><br>
+      Today we celebrate <strong>1.6 magical years</strong> of choosing each other. If I could bottle time, I’d save the sound of your laugh, the warmth in your voice, and the way you say my name. Here’s to more sunsets watched together, more secret jokes shared, and more dreams we’ll turn into reality side by side.
+      <br><br>
+      Shaima, our journey has been a beautiful blend of love, laughter, and even the little fights that somehow only brought us closer. Every disagreement has shown me that no argument can ever shake hearts that are truly meant for one another. Through every high and low, every mile apart, we’ve always found our way back to each other, proving that distance is powerless against love this strong.
+      <br><br>
+      Celebrating <strong>1.6 years</strong> with you fills me with gratitude, joy, and an unshakable certainty: no matter what life brings, I want to stay with you, face every challenge together, and love you more deeply every single day.
+    </p>
 
-    <audio id="bgMusic" autoplay loop>
-      <source src="your-music.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="bgMusic" autoplay loop>
+      <source src="your-music.mp3" type="audio/mpeg">
+    </audio>
 
-    <div class="slideshow">
-      <div class="slide-track">
-        <img src="photo1.jpg" alt="Sticker 1">
-        <img src="photo2.jpg" alt="Sticker 2">
-        <img src="photo3.jpg" alt="Sticker 3">
-        <img src="photo4.jpeg" alt="Sticker 4">
-        <img src="photo5.jpg" alt="Sticker 5">
-        <img src="photo6.jpg" alt="Sticker 6">
-        <img src="photo7.jpg" alt="Sticker 7">
-        <img src="photo8.jpg" alt="Sticker 8">
-        <img src="photo9.jpg" alt="Sticker 9">
-        <img src="photo10.jpg" alt="Sticker 10">
-        <img src="photo11.jpg" alt="Sticker 11">
-        <img src="photo12.jpg" alt="Sticker 12">
-        <img src="photo13.jpg" alt="Sticker 13">
-        <img src="photo14.jpg" alt="Sticker 14">
-        <img src="photo15.jpg" alt="Sticker 15">
-        <img src="photo16.jpg" alt="Sticker 16">
-        <img src="photo17.jpg" alt="Sticker 17">
-        <img src="photo18.jpg" alt="Sticker 18">
-        <img src="photo19.jpg" alt="Sticker 19">
-        <img src="photo20.jpg" alt="Sticker 20">
+    <div class="slideshow">
+      <div class="slide-track">
+        <!-- Add your images here -->
+      </div>
+    </div>
 
-        <img src="photo1.jpg" alt="Sticker 1 duplicate">
-        <img src="photo2.jpg" alt="Sticker 2 duplicate">
-        <img src="photo3.jpg" alt="Sticker 3 duplicate">
-        <img src="photo4.jpeg" alt="Sticker 4 duplicate">
-        <img src="photo5.jpg" alt="Sticker 5 duplicate">
-        <img src="photo6.jpg" alt="Sticker 6 duplicate">
-        <img src="photo7.jpg" alt="Sticker 7 duplicate">
-        <img src="photo8.jpg" alt="Sticker 8 duplicate">
-        <img src="photo9.jpg" alt="Sticker 9 duplicate">
-        <img src="photo10.jpg" alt="Sticker 10 duplicate">
-        <img src="photo11.jpg" alt="Sticker 11 duplicate">
-        <img src="photo12.jpg" alt="Sticker 12 duplicate">
-        <img src="photo13.jpg" alt="Sticker 13 duplicate">
-        <img src="photo14.jpg" alt="Sticker 14 duplicate">
-        <img src="photo15.jpg" alt="Sticker 15 duplicate">
-        <img src="photo16.jpg" alt="Sticker 16 duplicate">
-        <img src="photo17.jpg" alt="Sticker 17 duplicate">
-        <img src="photo18.jpg" alt="Sticker 18 duplicate">
-        <img src="photo19.jpg" alt="Sticker 19 duplicate">
-        <img src="photo20.jpg" alt="Sticker 20 duplicate">
-      </div>
-    </div>
+    <!-- Buttons -->
+    <div class="button-container">
+      <button onclick="location.href='poem.html'">Poem For You</button>
+      <button onclick="location.href='edits.html'">Edits for You</button>      
+    </div>
 
-    <!-- Buttons -->
-    <div class="button-container">
-      <button onclick="location.href='poem.html'">Poem For You</button>
-      <button onclick="location.href='edits.html'">Edits for You</button>
-          
-    </div>
-    <p style="text-align: center;">Always Yours Ismail Mansuri</p>
-  </section>
+    <p style="text-align: center;">Always Yours Ismail Mansuri</p>
+  </section>
 
-  <!-- Footer -->
-  <footer>Made with ❤ by Ismail Mansuri</footer>
+  <footer>Made with ❤ by Ismail Mansuri</footer>
 
-  <!-- JS scripts -->
-  <script>
-    // Floating hearts
-    const paragraph = document.getElementById('myParagraph');
-    let heartCount = 0;
-    const maxHearts = 50;
+  <script>
+    // Floating hearts
+    const paragraph = document.getElementById('myParagraph');
+    let heartCount = 0;
+    const maxHearts = 50;
 
-    function createHeart() {
-      if (heartCount >= maxHearts) return;
+    function createHeart() {
+      if (heartCount >= maxHearts) return;
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      const rect = paragraph.getBoundingClientRect();
+      const x = rect.left + Math.random() * rect.width;
+      const y = rect.top + Math.random() * rect.height;
+      heart.style.left = x + 'px';
+      heart.style.top = y + 'px';
+      heart.style.animationDuration = 2 + Math.random() * 2 + 's';
+      document.body.appendChild(heart);
+      heartCount++;
+      setTimeout(() => { heart.remove(); heartCount--; }, 6000);
+    }
 
-      const heart = document.createElement('div');
-      heart.className = 'heart';
+    setInterval(createHeart, 200);
 
-      const rect = paragraph.getBoundingClientRect();
-      const x = rect.left + Math.random() * rect.width;
-      const y = rect.top + Math.random() * rect.height;
+    // Confetti + Popup on page load
+    window.onload = function () {
+      document.getElementById('popup').style.display = 'flex';
+      const duration = 3000;
+      const end = Date.now() + duration;
 
-      heart.style.left = x + 'px';
-      heart.style.top = y + 'px';
-      heart.style.animationDuration = 2 + Math.random() * 2 + 's';
+      (function frame() {
+        confetti({particleCount:5, angle:60, spread:55, origin:{x:0}});
+        confetti({particleCount:5, angle:120, spread:55, origin:{x:1}});
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
+    };
 
-      document.body.appendChild(heart);
+    // Popup buttons
+    document.getElementById('leftBtn').onclick = function() {
+      document.getElementById('popup').style.display = 'none';
+    }
+    document.getElementById('rightBtn').onclick = function() {
+      document.getElementById('popup').style.display = 'none';
+    }
 
-      heartCount++;
-      setTimeout(() => {
-        heart.remove();
-        heartCount--;
-      }, 6000);
-    }
-
-    setInterval(createHeart, 200);
-
-    // Confetti + Popup on page load
-    window.onload = function () {
-      document.getElementById('popup').style.display = 'flex'; // show popup
-
-      var duration = 3 * 1000;
-      var end = Date.now() + duration;
-
-      (function frame() {
-        confetti({particleCount:5, angle:60, spread:55, origin:{x:0}});
-        confetti({particleCount:5, angle:120, spread:55, origin:{x:1}});
-        if (Date.now() < end) requestAnimationFrame(frame);
-      })();
-    };
-
-    // Popup buttons close
-    document.getElementById('leftBtn').onclick = function() {
-      document.getElementById('popup').style.display = 'none';
-    }
-
-    document.getElementById('rightBtn').onclick = function() {
-      document.getElementById('popup').style.display = 'none';
-    }
-
-    // Background music volume control
-    const music = document.getElementById("bgMusic");
-    music.volume = 0.2;
-  </script>
+    // Background music volume
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.2;
+  </script>
 </body>
 </html>
